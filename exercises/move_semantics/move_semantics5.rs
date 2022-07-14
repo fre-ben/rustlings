@@ -3,13 +3,14 @@
 // adding, changing or removing any of them.
 // Execute `rustlings hint move_semantics5` for hints :)
 
-// I AM NOT DONE
-
 fn main() {
     let mut x = 100;
+    println!("{}", x);
     let y = &mut x;
-    let z = &mut x;
     *y += 100;
-    *z += 1000;
+    println!("{}", x);
+    let z = &mut x;
+    *z = *z + 1000;
+    println!("{}", x);
     assert_eq!(x, 1200);
 }
